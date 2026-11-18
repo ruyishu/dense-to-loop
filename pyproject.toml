@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dense-to-loop"
+version = "0.1.0"
+description = "On-policy distillation into a newly converted recurrent Qwen3 student"
+requires-python = ">=3.11"
+dependencies = ["torch>=2.9,<3", "transformers==5.17.0", "datasets>=4.4,<5", "huggingface-hub>=1,<2", "math-verify[antlr4_13_2]==0.8.0"]
+
+[project.scripts]
+d2l = "dense_to_loop.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
